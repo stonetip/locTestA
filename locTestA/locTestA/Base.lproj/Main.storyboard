@@ -111,6 +111,15 @@
                             <constraint firstItem="L0b-Hu-Hyg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-24" id="uva-ye-Vmx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnStart" destination="HZs-VF-Tdp" id="BJf-AB-EAh"/>
+                        <outlet property="btnStop" destination="L0b-Hu-Hyg" id="cOd-gz-9IJ"/>
+                        <outlet property="labelAltVal" destination="ssY-9h-Vo3" id="GPR-BZ-Wf3"/>
+                        <outlet property="labelCourseVal" destination="juC-Bi-CTQ" id="6ng-fM-hRd"/>
+                        <outlet property="labelHeadingVal" destination="Qqj-6S-ivo" id="e1x-na-kPr"/>
+                        <outlet property="labelLatVal" destination="nAH-FM-zbl" id="bi8-un-emZ"/>
+                        <outlet property="labelLonVal" destination="J2J-Xx-hyK" id="Hm7-tg-OkT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
