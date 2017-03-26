@@ -25,11 +25,17 @@
                                 <rect key="frame" x="24" y="602" width="72" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="doStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbX-U5-NHN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L0b-Hu-Hyg">
                                 <rect key="frame" x="290" y="602" width="61" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="STOP"/>
+                                <connections>
+                                    <action selector="doStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nas-VR-jkt"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="wDg-J9-so4">
                                 <rect key="frame" x="87.5" y="218.5" width="200" height="230"/>
