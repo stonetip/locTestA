@@ -11,6 +11,11 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
+    enum GeoMath{
+        static let radian: Float = Float(180/M_PI)
+        static let metersToFeet = 3.28084
+    }
+    
     
     @IBOutlet weak var labelLatVal: UILabel!
     @IBOutlet weak var labelLonVal: UILabel!
@@ -25,8 +30,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locMgr = CLLocationManager()
     var updating = false
     
-  
+    
     @IBAction func doStart (_ sender: Any!){
+        
+        if CLLocationManager.authorizationStatus() == .notDetermined {
+            // you have 2 choice
+            // 1. requestAlwaysAuthorization
+            // 2. requestWhenInUseAuthorization
+            self.locMgr.requestWhenInUseAuthorization()
+        }
+        
         
         guard CLLocationManager.headingAvailable() else {
             
@@ -44,6 +57,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.updating = true
         
         self.locMgr.startUpdatingHeading()
+        
+        self.locMgr.desiredAccuracy = kCLLocationAccuracyBest // The accuracy of the location data
+        self.locMgr.distanceFilter = 1 // The minimum distance (measured in meters) a device must move horizontally before an update event is generated.
+        self.locMgr.startUpdatingLocation()
     }
     
     
@@ -52,12 +69,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         print("stopping")
         
         self.locMgr.stopUpdatingHeading()
+        self.locMgr.stopUpdatingLocation()
         self.updating = false
         
         labelHeadingVal.text = String(format: "%.1f", 0)
-        //TODO: reset label values
+        labelLatVal.text = String(format: "%.6f", 0)
+        labelLonVal.text = String(format: "%.6f", 0)
+        labelAltVal.text = String(format: "%.f", 0)
+        labelCourseVal.text = String(format: "%.1f", 0)
     }
-   
+    
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
@@ -80,6 +101,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         labelHeadingVal.text = String(format: "%.1f", currentHeading)
         
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = locations.last else {
+            return
+        }
+        
+        let lat = location.coordinate.latitude
+        let lon = location.coordinate.longitude
+        let alt = location.altitude
+        let course = location.course
+        
+        labelLatVal.text = String(format: "%.6f", lat)
+        labelLonVal.text = String(format: "%.6f", lon)
+        labelAltVal.text = String(format: "%.f", alt * GeoMath.metersToFeet)
+        labelCourseVal.text = String(format: "%.1f", course)
     }
     
     
