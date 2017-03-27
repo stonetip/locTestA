@@ -27,6 +27,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var btnStop: UIButton!
     
     
+    @IBOutlet weak var viewCompass: CompassClass!
+    
+    
     let locMgr = CLLocationManager()
     var updating = false
     
@@ -101,6 +104,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         labelHeadingVal.text = String(format: "%.1f", currentHeading)
         
+        let angleToRad = Float(currentHeading) / GeoMath.radian
+        
+        self.viewCompass.transform = CGAffineTransform(rotationAngle: CGFloat(-angleToRad))
+        
     }
     
     
@@ -126,6 +133,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //viewCompass.transform = CGAffineTransform(rotationAngle: 45)
     }
     
     override func didReceiveMemoryWarning() {

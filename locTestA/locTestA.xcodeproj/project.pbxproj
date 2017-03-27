@@ -13,6 +13,7 @@
 		FC967A1E1E87114C00D5615E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC967A1D1E87114C00D5615E /* Assets.xcassets */; };
 		FC967A211E87114C00D5615E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC967A1F1E87114C00D5615E /* LaunchScreen.storyboard */; };
 		FC967A291E8881BE00D5615E /* CompassRose.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC967A281E8881BE00D5615E /* CompassRose.swift */; };
+		FC967A2B1E88845D00D5615E /* CompassClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC967A2A1E88845D00D5615E /* CompassClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FC967A201E87114C00D5615E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC967A221E87114C00D5615E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC967A281E8881BE00D5615E /* CompassRose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CompassRose.swift; path = ../../CompassRose.swift; sourceTree = "<group>"; };
+		FC967A2A1E88845D00D5615E /* CompassClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompassClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				FC967A1D1E87114C00D5615E /* Assets.xcassets */,
 				FC967A1F1E87114C00D5615E /* LaunchScreen.storyboard */,
 				FC967A221E87114C00D5615E /* Info.plist */,
+				FC967A2A1E88845D00D5615E /* CompassClass.swift */,
 			);
 			path = locTestA;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC967A291E8881BE00D5615E /* CompassRose.swift in Sources */,
+				FC967A2B1E88845D00D5615E /* CompassClass.swift in Sources */,
 				FC967A191E87114C00D5615E /* ViewController.swift in Sources */,
 				FC967A171E87114C00D5615E /* AppDelegate.swift in Sources */,
 			);
